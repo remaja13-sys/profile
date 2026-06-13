@@ -128,7 +128,8 @@ section {
 #home {
     background: radial-gradient(circle at 90% 10%, rgba(0, 229, 255, 0.08), transparent 40%),
                 radial-gradient(circle at 10% 90%, rgba(209, 52, 243, 0.06), transparent 40%);
-    padding-top: 150px;
+    padding-top: 130px; 
+    justify-content: flex-start; 
     text-align: center;
 }
 
@@ -366,7 +367,8 @@ section {
 /* --- ABOUT SECTION --- */
 #about {
     background: radial-gradient(circle at 10% 20%, rgba(255, 94, 58, 0.05), transparent 30%);
-    padding-top: 150px; /* Tambahan agar tidak tertutup navbar */
+    padding-top: 130px; 
+    justify-content: flex-start; 
 }
 
 .about-content {
