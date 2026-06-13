@@ -488,11 +488,41 @@ footer {
     font-weight: 500;
 }
 
-/* --- RESPONSIVE RESPONSIVENESS --- */
+/* --- HAMBURGER MENU --- */
+.menu-toggle {
+    display: none; /* Sembunyiin di laptop */
+    font-size: 26px;
+    color: var(--dark-blue);
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     header { padding: 15px 5%; }
-    nav ul { display: none; } /* Untuk simplifikasi navigasi di HP */
-    section { padding: 80px 5% 60px 5%; }
+    
+    /* Munculin tombol garis tiga di HP */
+    .menu-toggle { display: block; } 
+    
+    /* Sulap menu jadi kotak dropdown ke bawah */
+    nav ul { 
+        position: absolute;
+        top: 70px;
+        left: -100%; /* Sembunyiin di kiri layar */
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        transition: 0.4s ease-in-out;
+        gap: 20px;
+    }
+
+    /* Class ini dipake buat nampilin menu pas diklik */
+    nav ul.show-menu {
+        left: 0; 
+    }
+
+    section { padding: 100px 5% 60px 5%; }
     .hero-title { font-size: 38px; }
     .contact-box { margin-top: -100px; padding: 25px; }
     .drive-container { padding: 20px; }
