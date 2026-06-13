@@ -256,13 +256,6 @@ section {
     opacity: 1;
 }
 
-.service-card.alt::before {
-    background: var(--orange-grad);
-}
-.service-card.purple::before {
-    background: var(--purple-grad);
-}
-
 .service-icon {
     width: 60px;
     height: 60px;
