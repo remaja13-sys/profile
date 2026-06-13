@@ -312,7 +312,8 @@ section {
 /* --- PORTFOLIO SECTION --- */
 #portfolio {
     background: #f8fafc;
-    padding-top: 150px; /* Tambahan agar tidak tertutup navbar */
+    padding-top: 130px;
+    justify-content: flex-start;
 }
 
 .drive-container {
