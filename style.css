@@ -215,13 +215,15 @@ section {
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Ini kunci biar rata tengah */
     gap: 25px;
     width: 100%;
 }
 
 .service-card {
+    flex: 0 1 320px;
     background: white;
     border-radius: 20px;
     padding: 35px 30px;
