@@ -2,21 +2,20 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 13 - Portofolio</title>
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo-remaja13.png">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-    <div class="logo">PROJECT <span>13</span></div>
+        <div class="logo">PROJECT <span>13</span></div>
+        
         <div class="menu-toggle" id="mobile-menu">
             <i class="fa-solid fa-bars"></i>
         </div>
+
         <nav>
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
@@ -26,26 +25,59 @@
             </ul>
         </nav>
     </header>
-    <section id="portfolio">
-        <h2 class="section-title">Portofolio Kami</h2>
-        <p class="section-subtitle">Semua bukti kerja keras dan hasil proyek keren yang udah kami selesaikan terkumpul rapi di sini. Transparan dan bisa kamu cek langsung!</p>
-        
-        <div class="drive-container">
-            <div class="drive-icon">
-                <i class="fa-brands fa-google-drive"></i>
-            </div>
-            <h3>Jelajahi Berkas Proyek</h3>
-            <p style="color: #64748B; margin-bottom: 25px; font-size: 15px;">Klik tombol di bawah ini untuk membuka folder Google Drive portofolio resmi kami secara penuh, atau intip langsung lewat cuplikan folder di bawah.</p>
-            
-            <a href="https://drive.google.com/drive/u/0/folders/1gKEXWaJ_ipuS6tfLRU--B1Q8tfY8KOTt" target="_blank" class="btn-drive">
-                <i class="fa-solid fa-folder-open"></i> Buka di Google Drive
-            </a>
 
-            <div class="iframe-wrapper">
-                <iframe src="https://drive.google.com/embeddedfolderview?id=1gKEXWaJ_ipuS6tfLRU--B1Q8tfY8KOTt#grid"></iframe>
+    <section id="portfolio">
+        <h2 class="section-title">Portofolio <span class="gradient-text">Kami</span></h2>
+        <p class="section-subtitle">Pilih kategori layanan di bawah ini untuk melihat detail hasil kerja kami.</p>
+        
+        <div class="portfolio-grid">
+            
+            <div class="folder-card" onclick="openPopup('https://drive.google.com/file/d/ID_FILE_PDF_LU/preview')">
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>2D & 3D Modeling</h4>
+                <p>Lihat Karya &rarr;</p>
             </div>
+
+            <div class="folder-card" onclick="openPopup('https://drive.google.com/file/d/ID_FILE_PDF_LU/preview')">
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>Content Creator</h4>
+                <p>Lihat Karya &rarr;</p>
+            </div>
+
+            <div class="folder-card" onclick="openPopup('https://drive.google.com/file/d/ID_FILE_PDF_LU/preview')">
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>Contractor</h4>
+                <p>Lihat Karya &rarr;</p>
+            </div>
+
+            <div class="folder-card" onclick="openPopup('https://drive.google.com/file/d/ID_FILE_PDF_LU/preview')">
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>Design Graphic</h4>
+                <p>Lihat Karya &rarr;</p>
+            </div>
+
+            <div class="folder-card" onclick="openPopup('https://drive.google.com/file/d/ID_FILE_PDF_LU/preview')">
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>Design Interior</h4>
+                <p>Lihat Karya &rarr;</p>
+            </div>
+
+            <div class="folder-card" onclick="openPopup('https://drive.google.com/file/d/ID_FILE_PDF_LU/preview')">
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>Tech & Inovasi</h4>
+                <p>Lihat Karya &rarr;</p>
+            </div>
+
         </div>
     </section>
+
+    <div id="pdfPopup" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup()">&times; Tutup</span>
+            <iframe id="pdfFrame" src="" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+
     <footer>
         <div class="contact-box">
             <h3>Tertarik dengan layanan kami?</h3>
@@ -67,13 +99,35 @@
             &copy; 2026 Remaja13. All Rights Reserved. Built with passion and enjoy vibes.
         </div>
     </footer>
+
     <script>
+        // Hamburger Menu
         const mobileMenu = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
-
         mobileMenu.addEventListener('click', () => {
             navMenu.classList.toggle('show-menu');
         });
+
+        // Fungsi Popup PDF
+        const modal = document.getElementById("pdfPopup");
+        const iframe = document.getElementById("pdfFrame");
+
+        function openPopup(pdfLink) {
+            iframe.src = pdfLink; // Masukin link PDF ke iframe
+            modal.style.display = "flex"; // Munculin modal
+        }
+
+        function closePopup() {
+            modal.style.display = "none"; // Sembunyiin modal
+            iframe.src = ""; // Bersihin link biar gak berat
+        }
+
+        // Kalau user klik di luar kotak putih, popup ketutup
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closePopup();
+            }
+        }
     </script>
 </body>
 </html>

@@ -488,7 +488,6 @@ footer {
     font-weight: 500;
 }
 
-/* --- HAMBURGER MENU --- */
 .menu-toggle {
     display: none; 
     font-size: 26px;
@@ -496,6 +495,105 @@ footer {
     cursor: pointer;
     margin-left: auto;
     margin-right: 20px;
+}
+
+/* --- PORTFOLIO FOLDERS GRID --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.folder-card {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid #edf2f7;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.folder-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 118, 255, 0.1);
+    border-color: #0076FF;
+}
+
+.folder-card i {
+    font-size: 50px;
+    color: #64748B; /* Warna folder abu-abu default */
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.folder-card:hover i {
+    color: #0076FF; /* Berubah biru pas di-hover */
+}
+
+.folder-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.folder-card p {
+    font-size: 14px;
+    color: #0076FF;
+    font-weight: 600;
+}
+
+/* --- MODAL / POPUP PDF --- */
+.modal {
+    display: none; /* Sembunyiin defaultnya */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Background gelap transparan */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #FF5E3A;
+    padding: 5px 15px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: #e04423;
+}
+
+.modal-content iframe {
+    border: none;
+    border-radius: 10px;
+    height: 70vh; /* Biar tinggi PDF-nya pas di layar */
 }
 
 @media (max-width: 768px) {
