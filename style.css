@@ -490,10 +490,12 @@ footer {
 
 /* --- HAMBURGER MENU --- */
 .menu-toggle {
-    display: none; /* Sembunyiin di laptop */
+    display: none; 
     font-size: 26px;
     color: var(--dark-blue);
     cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 @media (max-width: 768px) {
